@@ -8,12 +8,8 @@ import os
 # Initialize Flask app
 app = Flask(__name__)
 
-# CORS configuration
-# TEMP: Allow all origins for development
-# CORS(app)
-
-# RECOMMENDED: Allow only your deployed frontend
-CORS(app, origins=["https://my-frontend.vercel.app"])
+# ✅ Allow all origins (all frontends can access)
+CORS(app)
 
 # Load saved components
 with open('vectorizer.pkl', 'rb') as f:
